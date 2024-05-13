@@ -83,7 +83,7 @@
     <article id="post-使用 Firebase 建立圖床服務" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/" class="article-date">
-  <time class="dt-published" datetime="2024-05-13T08:04:21.000Z" itemprop="datePublished">2024-05-13</time>
+  <time class="dt-published" datetime="2024-05-13T08:04:00.000Z" itemprop="datePublished">2024-05-13</time>
 </a>
     
   </div>
@@ -105,48 +105,15 @@
         <h2 id="為何不放在-Github-空間就好？"><a href="#為何不放在-Github-空間就好？" class="headerlink" title="為何不放在 Github 空間就好？"></a>為何不放在 Github 空間就好？</h2><p>因為 Github 有空間限制，好像大概 1GB。</p>
 <h2 id="Firebase-的流量"><a href="#Firebase-的流量" class="headerlink" title="Firebase 的流量"></a>Firebase 的流量</h2><p>提供空間 5 GB，1 天的下載量有 1 GB。</p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513143534.png?alt=media&token=4cb8e81a-219a-4efa-a35e-e91baaecba77" alt="Firebase 的 Storage 規則"></p>
-<h2 id="如何使用-Firebase"><a href="#如何使用-Firebase" class="headerlink" title="如何使用 Firebase"></a>如何使用 Firebase</h2><h3 id="新增專案"><a href="#新增專案" class="headerlink" title="新增專案"></a>新增專案</h3><p>進入 <a target="_blank" rel="noopener" href="https://firebase.google.com/">Firebase 官網</a> ，點擊 <strong>Go to console</strong> 。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513144848.png?alt=media&token=5dd7356c-4788-45f6-9893-f0e64a79bd57" alt="點擊 Go to console"></p>
-<p>點選 <strong>建立專案</strong> 。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150518.png?alt=media&token=297c7daa-2394-447d-b8b8-928a4574bf03" alt="點選建立專案"></p>
-<p>輸入專案名稱。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150626.png?alt=media&token=8454d943-1239-41e8-9191-876b6411b60a" alt="輸入專案名稱"></p>
-<p>要不要啟用 GA 分析。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150704.png?alt=media&token=2fcd2a3d-54b9-4b06-a6e0-21fab7dbd26c" alt="要不要啟用 GA 分析？"></p>
-<p>可以新增帳戶，或是啟用以往建立的帳戶。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150704.png?alt=media&token=2fcd2a3d-54b9-4b06-a6e0-21fab7dbd26c" alt="新增帳戶"></p>
-<p>設定地區。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150845.png?alt=media&token=480a5e00-8b1d-4d97-87f5-971a2a6517ea" alt="設定地區"></p>
-<p>建立中。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150959.png?alt=media&token=e55b5acc-33cb-4968-818d-7459d376d09f" alt="建立中"></p>
-<p>建立完後繼續。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151028.png?alt=media&token=9c907a7c-11ae-4b40-9f24-855aaf80ea8b" alt="建立完後繼續"></p>
-<p>轉跳到 Firebase 後台。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151235.png?alt=media&token=05d47f50-9632-4fc7-a1d9-473b6ceef3f6" alt="Firebase 後台"></p>
-<h3 id="建立-Storage-服務"><a href="#建立-Storage-服務" class="headerlink" title="建立 Storage 服務"></a>建立 Storage 服務</h3><p>找出左邊選單中的 <strong>建構 &gt; Storage</strong> 。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151500.png?alt=media&token=c30d89d7-d176-4a95-ac8b-6b5d94e5a626" alt="建構 &gt; Storage"></p>
-<p>按下開始使用。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151821.png?alt=media&token=c1bc0599-43fb-4544-870d-5ce39d038af2" alt="按下開始使用"></p>
-<p>選擇正式版。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152022.png?alt=media&token=f6b3f106-2d9a-45ed-a7a9-869db09d013d" alt="選擇正式版"></p>
-<p>只是用來儲存圖片，所以位置應該是沒差？</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152138.png?alt=media&token=f648e459-d82f-4313-8699-adbad8325215" alt="選擇 Storage 位置"></p>
-<p>建立過程大約需要 1 ~ 2 分鐘。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152452.png?alt=media&token=2f99fec3-86f6-4d05-a100-f8463ce0cb5c" alt="建立中"></p>
-<p>建立完成後會轉跳到 Storage 服務畫面。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152816.png?alt=media&token=8331234c-7444-4fea-898d-2e472fec6b7d" alt="建立完成"></p>
-<h3 id="使用-Storage-服務"><a href="#使用-Storage-服務" class="headerlink" title="使用 Storage 服務"></a>使用 Storage 服務</h3><p>上傳圖片，這樣就可以 Storage 中看到上傳的內容。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513154137.png?alt=media&token=ee998242-cb62-4aad-9a3d-6c7b932ee852" alt="上傳圖片成功"></p>
-<p>複製連結網址，這樣就可以取到這張圖片。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513154358.png?alt=media&token=b00daa6b-7ce0-491c-ac17-7f97af1683e6" alt="複製連結網址的地方"></p>
-<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://firebase.google.com/">Firebase 官網</a></li>
-</ul>
-
+        
+          <p class="article-more-link">
+            <a href="/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/" data-id="clw4ozdu70003qcusf56k7h91" data-title="使用 Firebase 建立圖床服務" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/" data-id="clw4qs0ie000308us0uwv31gh" data-title="使用 Firebase 建立圖床服務" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -188,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/" data-id="clw4ozdue0005qcush77md0a7" data-title="測試用" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/" data-id="clw4qs0ih000508us0guv9b6g" data-title="測試用" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -228,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/07/%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%A3%E7%8B%80%E6%B3%81/" data-id="clw4ozdu40002qcusgzl476g0" data-title="今天天氣狀況" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/07/%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%A3%E7%8B%80%E6%B3%81/" data-id="clw4qs0ib000208us1a6ugi4t" data-title="今天天氣狀況" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -281,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/06/hello-world/" data-id="clw4ozdtz0001qcuscdwgh660" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/06/hello-world/" data-id="clw4qs0i5000108us4gkhgix2" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
