@@ -4,18 +4,39 @@
   <meta charset="utf-8">
   
   
-  <title>AShen 的 Blog</title>
+  <title>使用 Firebase 建立圖床服務 | AShen 的 Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="用來分享學習歷程的 Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AShen 的 Blog">
-<meta property="og:url" content="https://andersonshen2020.github.io/hexo/index.html">
+  <meta name="description" content="為何不放在 Github 空間就好？因為 Github 有空間限制，好像大概 1GB。 Firebase 的流量提供空間 5 GB，1 天的下載量有 1 GB。  如何使用 Firebase新增專案進入 Firebase 官網 ，點擊 Go to console 。  點選 建立專案 。  輸入專案名稱。  要不要啟用 GA 分析。  可以新增帳戶，或是啟用以往建立的帳戶。  設定地區。  建立中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Firebase 建立圖床服務">
+<meta property="og:url" content="https://andersonshen2020.github.io/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/index.html">
 <meta property="og:site_name" content="AShen 的 Blog">
-<meta property="og:description" content="用來分享學習歷程的 Blog">
+<meta property="og:description" content="為何不放在 Github 空間就好？因為 Github 有空間限制，好像大概 1GB。 Firebase 的流量提供空間 5 GB，1 天的下載量有 1 GB。  如何使用 Firebase新增專案進入 Firebase 官網 ，點擊 Go to console 。  點選 建立專案 。  輸入專案名稱。  要不要啟用 GA 分析。  可以新增帳戶，或是啟用以往建立的帳戶。  設定地區。  建立中">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513143534.png?alt=media&token=4cb8e81a-219a-4efa-a35e-e91baaecba77">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513144848.png?alt=media&token=5dd7356c-4788-45f6-9893-f0e64a79bd57">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150518.png?alt=media&token=297c7daa-2394-447d-b8b8-928a4574bf03">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150626.png?alt=media&token=8454d943-1239-41e8-9191-876b6411b60a">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150704.png?alt=media&token=2fcd2a3d-54b9-4b06-a6e0-21fab7dbd26c">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150704.png?alt=media&token=2fcd2a3d-54b9-4b06-a6e0-21fab7dbd26c">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150845.png?alt=media&token=480a5e00-8b1d-4d97-87f5-971a2a6517ea">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513150959.png?alt=media&token=e55b5acc-33cb-4968-818d-7459d376d09f">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151028.png?alt=media&token=9c907a7c-11ae-4b40-9f24-855aaf80ea8b">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151235.png?alt=media&token=05d47f50-9632-4fc7-a1d9-473b6ceef3f6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151500.png?alt=media&token=c30d89d7-d176-4a95-ac8b-6b5d94e5a626">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513151821.png?alt=media&token=c1bc0599-43fb-4544-870d-5ce39d038af2">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152022.png?alt=media&token=f6b3f106-2d9a-45ed-a7a9-869db09d013d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152138.png?alt=media&token=f648e459-d82f-4313-8699-adbad8325215">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152452.png?alt=media&token=2f99fec3-86f6-4d05-a100-f8463ce0cb5c">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513152816.png?alt=media&token=8331234c-7444-4fea-898d-2e472fec6b7d">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513154137.png?alt=media&token=ee998242-cb62-4aad-9a3d-6c7b932ee852">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513154358.png?alt=media&token=b00daa6b-7ce0-491c-ac17-7f97af1683e6">
+<meta property="article:published_time" content="2024-05-13T08:04:21.000Z">
+<meta property="article:modified_time" content="2024-05-13T08:17:57.330Z">
 <meta property="article:author" content="AShen">
-<meta property="article:tag" content="前端,前端開發">
+<meta property="article:tag" content="Firebase">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/hexo-da989.appspot.com/o/Firebase%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%2FPasted%20image%2020240513143534.png?alt=media&token=4cb8e81a-219a-4efa-a35e-e91baaecba77">
   
     <link rel="alternate" href="/hexo/atom.xml" title="AShen 的 Blog" type="application/atom+xml">
   
@@ -78,9 +99,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-使用 Firebase 建立圖床服務" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-使用 Firebase 建立圖床服務" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/" class="article-date">
   <time class="dt-published" datetime="2024-05-13T08:04:21.000Z" itemprop="datePublished">2024-05-13</time>
@@ -93,8 +112,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2024/05/13/%E4%BD%BF%E7%94%A8%20Firebase%20%E5%BB%BA%E7%AB%8B%E5%9C%96%E5%BA%8A%E6%9C%8D%E5%8B%99/">使用 Firebase 建立圖床服務</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      使用 Firebase 建立圖床服務
     </h1>
   
 
@@ -155,144 +174,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-測試用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-05-12T16:34:41.000Z" itemprop="datePublished">2024-05-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/">測試用</a>
-    </h1>
+    <a href="/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">測試用</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>用來測試 markdown 的效果</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">格式</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">$ hexo new &lt;日記名稱&gt;</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">範例</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">$ hexo new 今天天氣狀況</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">$ INFO  Validating config</span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">$ INFO  Created: G:\...\blogDemo\<span class="built_in">source</span>\_posts\今天天氣狀況.md</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/13/%E6%B8%AC%E8%A9%A6%E7%94%A8/" data-id="clw4ozdue0005qcush77md0a7" data-title="測試用" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo/tags/%E6%B8%AC%E8%A9%A6/" rel="tag">測試</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-今天天氣狀況" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2024/05/07/%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%A3%E7%8B%80%E6%B3%81/" class="article-date">
-  <time class="dt-published" datetime="2024-05-06T17:21:46.000Z" itemprop="datePublished">2024-05-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2024/05/07/%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%A3%E7%8B%80%E6%B3%81/">今天天氣狀況</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/07/%E4%BB%8A%E5%A4%A9%E5%A4%A9%E6%B0%A3%E7%8B%80%E6%B3%81/" data-id="clw4ozdu40002qcusgzl476g0" data-title="今天天氣狀況" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo/tags/%E5%A4%A9%E6%B0%A3/" rel="tag">天氣</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo/tags/%E6%97%A5%E8%A8%98/" rel="tag">日記</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/hexo/2024/05/06/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2024-05-06T10:24:31.199Z" itemprop="datePublished">2024-05-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/hexo/2024/05/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://andersonshen2020.github.io/hexo/2024/05/06/hello-world/" data-id="clw4ozdtz0001qcuscdwgh660" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
